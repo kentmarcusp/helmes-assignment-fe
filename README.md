@@ -2,8 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3 for a technical task assigned to me.
 
-## User data for this application is initialised on the back-end application start-up and stored in the database.
-## Test users are: "Helmes" & "TestUser". No password validation is necessary within this project. Account based actions are stored in localstorage and cleared during pressing the "Log out" button
+## [Useful Information](#useful-information)
 
 ## Prerequisites
 
@@ -61,3 +60,11 @@ Run `ng test` to execute the unit tests.
 
 ## Further Help
 To get more help on the Angular CLI, use ng help or go check out the Angular CLI Overview and Command Reference page.
+
+## Useful information
+
+**The base path for the front-end application is [http://localhost:4200/login](http://localhost:4200/login)**
+
+**User data for this application is initialized on the back-end application start-up and stored in the database.**
+
+**Test users are: "Helmes" & "TestUser". No password validation is necessary within this project. Account based actions are stored in localstorage and cleared during pressing the "Log out" button**
