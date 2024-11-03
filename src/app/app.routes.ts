@@ -9,7 +9,7 @@ import { LoginViewComponent } from '../components/login-view/login-view.componen
 const baseUrlRoot = '';
 
 export const routes: Routes = [
-  { path: '', redirectTo: `${baseUrlRoot}settings`, pathMatch: 'full' },
+  { path: '', redirectTo: `${baseUrlRoot}login`, pathMatch: 'full' },
   { path: `${baseUrlRoot}settings`, component: UserSectorDataViewComponent },
   { path: `${baseUrlRoot}sectors`, component: SectorDisplayViewComponent },
   { path: `${baseUrlRoot}login`, component: LoginViewComponent },
