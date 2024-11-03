@@ -1,0 +1,17 @@
+<div class="mt-4">
+    <alert-display *ngIf="!displayAlert">User not found!</alert-display>
+</div>
+
+<div class="container">
+    <div class="col mb-3" style="max-width: 25%;">
+        <h2>Login</h2>
+        <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+            <div class="form-group mb-3">
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Enter username..." id="username" class="form-control mb-3"
+                    [(ngModel)]="username" name="username" required>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+        </form>
+    </div>
+</div>

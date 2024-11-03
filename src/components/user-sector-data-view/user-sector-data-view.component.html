@@ -1,0 +1,57 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <div class="left-section">
+                User Settings
+            </div>
+            <div class="right-section">
+                <a href="/sectors" class="btn btn-light btn-sm">Edit Information</a>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title text-muted">Username:
+                <span class="fw-bold">{{ appAccountName }}</span>
+            </h5>
+            <div class="card">
+                <h6 class="card-header fw-bold">
+                    Your selected sectors:
+                </h6>
+            </div>
+            <div class="accordion">
+                <ng-container *ngFor="let mainSector of mappedSectors; let i = index">
+                    <div class="accordion-item" *ngIf="mainSector.indent === 0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold" type="button" (click)="toggleAccordion(i)"
+                                [attr.aria-expanded]="accordionStates[i]"
+                                [ngClass]="{'collapsed': !accordionStates[i]}">
+                                {{ mainSector.sectorName }}
+                            </button>
+                        </h2>
+                        <div [ngClass]="{'collapse': !accordionStates[i], 'show': accordionStates[i]}"
+                            [attr.aria-labelledby]="'heading' + i">
+                            <div class="accordion-body">
+                                <div *ngIf="!mainSector.containsSubCategories">
+                                    <div class="text-muted">No sub-sectors have been chosen.</div>
+                                </div>
+                                <table class="table">
+                                    <tbody>
+                                        <ng-container *ngFor="let sector of mappedSectors">
+                                            <tr
+                                                *ngIf="sector.indent! > 0 && isChildOfPreviousMainSector(sector, mainSector)">
+                                                <td [style.paddingLeft.px]="sector.indent! * 20"
+                                                    [style.fontWeight]="sector.containsSubCategories ? 'bold' : 'normal'">
+                                                    {{ sector.sectorName }}
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
